@@ -35,7 +35,6 @@ render(){
       bgColor='#00ACEE'
       spinnerColor='white'
       textColor='white'
-      logoSrc='url("../images/botcheck.png")'
       text='Analyzing Data'
     > 
     <Results data={this.state.results}/>
