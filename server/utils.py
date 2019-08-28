@@ -24,19 +24,13 @@ def load_model():
 
 	return regres
 
-def auth_api():
-	#keys
+
+def user_auth():
 	consumer_key = '6qhxfyGHdnt92g25yi0W48NRY'
 	consumer_secret = 'UlkNAzJx1dMqOBShRRyQsGqRB5hKvzkhL0VfiMb3vN7KK7mEij'
-	access_token = '2713535500-1X6ji2Z0KnSQWKz4fLFYX0XDtfQ1BjKt2XVfaTc'
-	access_token_secret = 'PFU0cESnQp7J7QHiZy0tdXrvdR91dtmm6g9vGKQwK33nj'
-
-	#initialize auth
-	auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
-	auth.set_access_token(access_token,access_token_secret)
-	api = tweepy.API(auth)
-
-	return api
+	callback = 'http://127.0.0.1:5000/api/callback'
+	auth = tweepy.OAuthHandler(consumer_key, consumer_secret, callback)
+	return auth
 
 
 def get_user_friend_id(api, user_name):
@@ -59,7 +53,8 @@ def get_friend_data(api,ids):
 	            "screen_name":user.screen_name,
 	            "len_name": len(user.screen_name),
 	            "following": user.friends_count,
-	            "num_tweets":user.statuses_count
+	            "num_tweets":user.statuses_count,
+	            "pic":(user.profile_image_url).replace("_normal", "")
 	        }
 	        info.append(user_dict)
 
@@ -76,5 +71,4 @@ def predict_friends(model,friend_data):
 	return friend_data
 
 def simplify_predictions(preds):
-	mydict = dict(zip(preds.screen_name, preds.pred))
-	return mydict
+	return preds.to_dict('records')

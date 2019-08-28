@@ -1,31 +1,29 @@
 import React from 'react'
-//...
 import LoadingScreen from 'react-loading-screen'
 import { withRouter} from 'react-router-dom';
 import axios from 'axios'
-
+import Custom_Nav from './Nav'
+import Results from './Results'
+ 
 //...
 class Load extends React.Component {
 
 constructor(props) {
     super(props)
-    this.state = { loading: true, results:{} }
+    this.state = { loading: true, results:[] }
     this.sendNameToServer = this.sendNameToServer.bind(this);
 }
 
-sendNameToServer(screen_name){
+sendNameToServer(){
 axios.post(window.location.origin+'/api/result', {
-    screen_name:screen_name
   })
   .then(result =>{
-    console.log(result.data)
-    this.setState({results:result.data, loading:false})
-    console.log(typeof(this.state.results))
+    this.setState({results:result.data.items, loading:false})
   })
 }
 
 componentDidMount(){
-    this.sendNameToServer(this.props.location.state.name)
+    this.sendNameToServer() 
   }
 
 
@@ -34,24 +32,15 @@ render(){
   return(
       <LoadingScreen
       loading={this.state.loading}
-      bgColor='#f1f1f1'
-      spinnerColor='#9ee5f8'
-      textColor='#676767'
-      logoSrc={require('../images/botcheck.png')}
-      text='Running our state of the art Model'
+      bgColor='#00ACEE'
+      spinnerColor='white'
+      textColor='white'
+      logoSrc='url("../images/botcheck.png")'
+      text='Analyzing Data'
     > 
-    
-    <div>
-    {
-      Object.keys(this.state.results).map((object, i) => {
-        return <p key={object}>{object} + {this.state.results[object]}</p>
-    }) 
-    }
-
-    </div>
+    <Results data={this.state.results}/>
     </LoadingScreen>
     )
-    
   }
 
 }

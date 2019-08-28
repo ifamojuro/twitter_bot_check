@@ -2,6 +2,7 @@ import React from "React";
 import ReactDOM from "react-dom";
 import App from "./App";
 import Load from "./Load";
+import Faq from "./Faq";
 import { BrowserRouter, Switch, Route} from "react-router-dom";
 
 

@@ -6,7 +6,4 @@
 
 
 <ul>
-      {this.state.results.products.map((value, index) => {
-        return <li key={index}>{value}</li>
-      })}
     </ul>

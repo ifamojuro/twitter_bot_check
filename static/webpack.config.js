@@ -2,7 +2,7 @@ module.exports = {
   entry:  __dirname + '/js/index.jsx',
     output: {
         path: __dirname + '/dist',
-        filename: 'bundle.js',
+        filename: 'bundle.js'
     },
     resolve: {
         extensions: ['.js', '.jsx', '.css']
@@ -21,11 +21,8 @@ module.exports = {
         use:['style-loader','css-loader']
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[ext]',
-        }
+        test: /\.(png|svg|jpg|gif)$/,
+        use: 'file-loader'
       }
 
     ]
