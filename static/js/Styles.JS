@@ -39,7 +39,7 @@ export const StyledLink = styled(Link)`
 
 export const StyledHlink = styled(Hlink)`
   color: white !important;
-  font-family: 'Open Sans', sans-serif;;
+  font-family: 'Open Sans', sans-serif;
 `;
 
 export const Twitbut = styled.button`
@@ -48,13 +48,13 @@ export const Twitbut = styled.button`
 	text-align: center;
 	height: 3rem;
 	font-size: 2rem;
-	font-family: 'Lora', serif;
+	font-family: 'Open Sans', sans-serif;;
 	width: 40vw;
 	border-radius: 30px;
 	margin:0 auto;
     display:block;
 	&:hover {
-    background:#36D8FF;
+    background:#00ACEE;
     color:white
   }
 

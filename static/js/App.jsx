@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom
 import axios from 'axios'
 import logo from '../images/checker.png';
 import styled from 'styled-components';
-import { Wrapper, TitleBlub, Twitbut, Footer, Footer_Link, Des_Blurb, ColoredLink, StyledLink} from './Styles.js';
+import { Wrapper, TitleBlub, Twitbut, Footer, Footer_Link, Des_Blurb, ColoredLink, StyledLink, StyledHlink} from './Styles.js';
 import Custom_Nav from './Nav'
 import Faq from './Faq'
 
@@ -41,12 +41,12 @@ twit_py_auth(){
     	<Custom_Nav/>
     	<Wrapper>
     		<div id="home" style={{"height":"100vh"}}>
-    		<TitleBlub>Analyze.me uses state of the art research to help you identify if any of the twitter accounts that you follow are content polluting bots.</TitleBlub>
+    		<TitleBlub>Analyze.me uses state of the art research to help you identify if any of the twitter accounts that you follow are malicious Content Polluters.</TitleBlub>
     		<Twitbut onClick={this.twit_py_auth}>Click Here to login with Twitter!</Twitbut>
     		<Des_Blurb> 
-    			Analyze.me uses data sourced from <ColoredLink href="https://pdfs.semanticscholar.org/b433/9952a73914dc7eacf3b8e4c78ce9a5aa9502.pdf">Lee, Eoff and Cavelee's Study on Twitter Content Polluters </ColoredLink> to create a Machine Learning Classification Model which detects content polluting twitter accounts.
-    			Furthermore, Analyze.me does not save/store/or retain any personal data. Data is scraped from the Twitter api for the sole purpose of runnning it through the model. After a user leaves 
-    			Analyze.me website, all relevant data is deleted from the server. If you have more question's definetly check out our <StyledLink to="/faq"> FAQ page </StyledLink>. Otherwise, feel free to reach the site's developer through his website here!
+    			Analyze.me uses data sourced from <ColoredLink href="https://pdfs.semanticscholar.org/b433/9952a73914dc7eacf3b8e4c78ce9a5aa9502.pdf">Lee, Eoff and Cavelee's Study on Twitter Content Polluters </ColoredLink> to create a Machine Learning Classifier which detects content polluting twitter accounts.
+    			Analyze.me does not save/store/or retain any personal data. Data is scraped from the Twitter for the sole purpose of runnning it through the model. After a user leaves 
+    			the Analyze.me website, all relevant data is deleted from the server. If you have more question's, definetly check out our <StyledHlink smooth style={{"font-weight": "bold"}} to="/#faq-section"> FAQ section</StyledHlink>. Otherwise, feel free to reach the site's developer <ColoredLink href="http://ifedayo.me"> through his website here!</ColoredLink>
     		</Des_Blurb>
     		</div>
     		<Faq/>

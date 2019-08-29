@@ -1,6 +1,5 @@
 import React from "React";
-import ReactDOM from "react-dom";
-import {Wrapper} from './Styles.js';
+import {Wrapper, TitleBlub, Footer, Footer_Link} from './Styles.js';
 import Custom_Nav from "./Nav"
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
@@ -49,9 +48,14 @@ export default class Results extends React.Component{
 	    	<div>
 		    	<Custom_Nav/>
 		    	<Wrapper>
+		    		<TitleBlub>You follow {this.props.count} Twitter Accounts</TitleBlub>
+		    		<TitleBlub>Our Model Identified {this.props.bots} of those accounts as Content Polluters</TitleBlub>
 		    		<BootstrapTable bootstrap4 keyField='screen_name' data={ this.props.data } 
 		    		columns={ columns } pagination={paginationFactory()} headerClasses="header-class" rowClasses="row-class" striped hover />
 		    	</Wrapper>
+		    	<Footer>
+	   				<Footer_Link href="http://ifedayo.me"> Made by Ifedayo Famojuro Ⓒ</Footer_Link>
+	   			</Footer>
 		    </div>
 		 )
 

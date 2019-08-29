@@ -10,7 +10,7 @@ class Load extends React.Component {
 
 constructor(props) {
     super(props)
-    this.state = { loading: true, results:[] }
+    this.state = { loading: true, results:[], count:0, bots:0 }
     this.sendNameToServer = this.sendNameToServer.bind(this);
 }
 
@@ -18,7 +18,7 @@ sendNameToServer(){
 axios.post(window.location.origin+'/api/result', {
   })
   .then(result =>{
-    this.setState({results:result.data.items, loading:false})
+    this.setState({results:result.data.items, loading:false, count:result.data.friends, bots:result.data.bots})
   })
 }
 
@@ -37,7 +37,7 @@ render(){
       textColor='white'
       text='Analyzing Data'
     > 
-    <Results data={this.state.results}/>
+    <Results data={this.state.results} count={this.state.count} bots={this.state.bots}/>
     </LoadingScreen>
     )
   }
