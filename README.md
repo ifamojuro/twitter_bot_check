@@ -1,9 +1,12 @@
-##So I wanted to Build
 
-- A project that utilized Data Analysis in Python and Front-End React
-- A project that pulled real time data and used API's
-- A project that was user centric. A user should be able to 
+##Development Repo for Sbotcheck.me
 
+Sbotcheck.me is a web applet which allows users to scan their twitter followers and detect identify content polluting accounts
 
-<ul>
-    </ul>
+Sbotcheck.me Stack:
+- ReactJS Frontent
+- Python/Flask API
+- Panda/SciKit Logistic Classifer
+	- Classifier currently 
+
+[Site is in Production Here](http://sbotcheck.me/)

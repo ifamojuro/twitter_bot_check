@@ -26,8 +26,8 @@ def load_model():
 
 
 def user_auth():
-	consumer_key = '6qhxfyGHdnt92g25yi0W48NRY'
-	consumer_secret = 'UlkNAzJx1dMqOBShRRyQsGqRB5hKvzkhL0VfiMb3vN7KK7mEij'
+	consumer_key = 'TWITTER API KEY'
+	consumer_secret = "INSERTT YOUR TWITTER API SECRET KEY HERE"
 	callback = 'http://127.0.0.1:5000/api/callback'
 	auth = tweepy.OAuthHandler(consumer_key, consumer_secret, callback)
 	return auth
