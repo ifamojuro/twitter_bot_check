@@ -86,7 +86,7 @@ def do_the_work():
 
 
 if __name__ == "__main__":
-	app.secret_key = 'Bruh, Fam, Les, Go'
+	app.secret_key = 'INSERTT SECRET KEY HERE'
 	app.run(debug=True)
 	sess.init_app(app)
 	app.config.update(SESSION_COOKIE_HTTPONLY=False)
